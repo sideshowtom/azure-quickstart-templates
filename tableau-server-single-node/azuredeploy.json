@@ -370,7 +370,13 @@
         "template": {
           "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
           "contentVersion": "1.0.0.0",
-          "resources": []
+          "resources": [],
+          "outputs": {
+              "helloWorldOutputFromLevel3": {
+                  "type": "string",
+                  "value": "['hello world from level 3!']"
+              }
+          }
         }
       }
     },
@@ -525,13 +531,19 @@
           "properties":
             "[if(variables('os_is_linux'),variables('lin_CSE_properties'),variables('win_CSE_properties'))]"
         }
-      ]
+      ],
+      "outputs": {
+          "helloWorldOutputFromLevel2": {
+              "type": "string",
+              "value": "['hello world from level 2!']"
+          }
+      }
     }
   ],
   "outputs": {
-      "helloWorldOutput": {
+      "helloWorldOutputFromLevel1": {
           "type": "string",
-          "value": "['hello world!']"
+          "value": "['hello world from level 1!']"
       }
   }
 }
