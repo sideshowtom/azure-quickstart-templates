@@ -527,5 +527,11 @@
         }
       ]
     }
-  ]
+  ],
+  "outputs": {
+      "helloWorldOutput": {
+          "type": "string",
+          "value": "['hello world!']"
+      }
+  }
 }
