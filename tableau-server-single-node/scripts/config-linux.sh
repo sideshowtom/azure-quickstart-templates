@@ -86,6 +86,14 @@ fi
 wait
 chmod +x automated-installer.sh
 
+
+echo "USER=" >>installer_log.txt
+echo $USER >>installer_log.txt
+echo "OS=" >>installer_log.txt
+echo $OS >>installer_log.txt
+echo "TS_USER=" >>installer_log.txt
+echo $TS_USER >>installer_log.txt
+ 
 echo "modified automated-installer" >> installer_log.txt
 
 # ensure everything is finished
