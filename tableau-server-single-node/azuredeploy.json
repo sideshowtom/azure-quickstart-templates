@@ -285,6 +285,7 @@
         "commandToExecute": 
           "[variables('LinCmdWrapper')]",
         "fileUris": [
+          "[variables('linuxscripturi')]",
           "[variables('installscripturi')]"
         ]
       }
