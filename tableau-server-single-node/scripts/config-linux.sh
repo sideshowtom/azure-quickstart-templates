@@ -1,14 +1,16 @@
 #!/bin/bash
 
-#u:p:f:g:h:i:j:k:l:m:n:o:q:r:s:t:v:w:x:y:e:" option
+# confirmed: this script works when run manually as root user from root top directory using the following command
+# sh ./config-linux.sh -u <username> -p <password> -h admin -i admin -j 98107 -k usa -l seattle -m data -n tech -o yes -q pm -r 8888888 -s tableau -t wa -v dev -w jamie -x jdata@tableau.com [-y <license key>]
+# customized to reflect machine admin username and admin password
 
-while getopts "u:p:h:e:i:j:k:l:m:n:o:q:r:s:t:x:v:g:y:f:w:" option
+while getopts u:p:f:g:h:i:j:k:l:m:n:o:q:r:s:t:v:w:x:y:e: option
 do
  case "${option}"
  in
  u) USER=${OPTARG};;
  p) PASSWORD=${OPTARG};;
- e) TVERSION=${OPTARG};;
+ e) TS_VERSION=${OPTARG};;
  f) OS=${OPTARG};;
  g) INSTALL_SCRIPT_URL=${OPTARG};;
  h) TS_USER=${OPTARG};;
@@ -85,14 +87,6 @@ wget --remote-encoding=UTF-8 --output-document=automated-installer.sh $INSTALL_S
 wait
 chmod +x automated-installer.sh
 
-
-echo "USER=" >>installer_log.txt
-echo $USER >>installer_log.txt
-echo "OS=" >>installer_log.txt
-echo $OS >>installer_log.txt
-echo "TS_USER=" >>installer_log.txt
-echo $TS_USER >>installer_log.txt
- 
 echo "modified automated-installer" >> installer_log.txt
 
 # ensure everything is finished
