@@ -1,11 +1,14 @@
 #!/bin/bash
 
-while getopts "u:p:f:g:h:i:j:k:l:m:n:o:q:r:s:t:v:w:x:y:" option
+#u:p:f:g:h:i:j:k:l:m:n:o:q:r:s:t:v:w:x:y:e:" option
+
+while getopts "u:p:h:e:i:j:k:l:m:n:o:q:r:s:t:x:v:g:y:f:w:" option
 do
  case "${option}"
  in
  u) USER=${OPTARG};;
  p) PASSWORD=${OPTARG};;
+ e) TVERSION=${OPTARG};;
  f) OS=${OPTARG};;
  g) INSTALL_SCRIPT_URL=${OPTARG};;
  h) TS_USER=${OPTARG};;
