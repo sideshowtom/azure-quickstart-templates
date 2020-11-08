@@ -283,7 +283,7 @@
       },
         "protectedSettings": {
         "commandToExecute": 
-          "variables('LinCmdWrapper')",
+          "[variables('LinCmdWrapper')]",
         "fileUris": [
           "[variables('linuxscripturi')]"
         ]
