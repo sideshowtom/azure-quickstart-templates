@@ -280,6 +280,8 @@
       "settings": {
         "skipDos2Unix": false,
         "timestamp": 123456789
+      },
+      "protectedSettings": {
       }
     },
     "LinuxsecurityRules": [
