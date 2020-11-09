@@ -92,6 +92,9 @@ echo "modified automated-installer" >> installer_log.txt
 # ensure everything is finished
 wait
 
+#the vm is non-interactive
+debconf --frontend=noninteractive
+
 # run automated installer (install trial if no license key)
 if [ -z "$LICENSE_KEY" ]
 then
