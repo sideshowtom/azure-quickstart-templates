@@ -253,7 +253,7 @@
     },
     "publicIpName": "[substring(concat(uniqueString(resourceGroup().id, deployment().name)), 0, 6)]",
     "LinuxExecute": "[concat('-u ''', parameters('adminUsername'), ''' -p ''', parameters('adminPassword'), ''' -h ''', parameters('tableau_admin_username'), ''' -e ''', parameters('tableau_version'), ''' -i ''', parameters('tableau_admin_password'), ''' -j ''', parameters('registration_zip'), ''' -k ''', parameters('registration_country'), ''' -l ''', parameters('registration_city'), ''' -m ''', parameters('registration_last_name'), ''' -n ''', parameters('registration_industry'), ''' -o yes -q ''', parameters('registration_title'),''' -r ''', parameters('registration_phone'),''' -s ''', parameters('registration_company'), ''' -t ''', parameters('registration_state'), ''' -x ''', parameters('registration_email'), ''' -v ''', parameters('registration_department'), ''' -g ''', variables('installscripturi'), ''' -y ''', parameters('license_key'), ''' -f ''', parameters('OS'), ''' -w ''', parameters('registration_first_name'), '''')]",
-    "LinCmdWrapper": "[concat('bash ./config-linux.sh ', variables('LinuxExecute'))]",
+    "LinCmdWrapper": "[concat('debconf --frontend=noninteractive bash ./config-linux.sh ', variables('LinuxExecute'))]",
     "linuxscripturi": "[uri(parameters('_artifactsLocation'), concat('scripts/config-linux.sh', parameters('_artifactsLocationSasToken')))]",
     "installscripturi": "[uri(parameters('_artifactsLocation'), concat('scripts/automated-installer', parameters('_artifactsLocationSasToken')))]",
     "winscriptfile":"config-win.ps1",
