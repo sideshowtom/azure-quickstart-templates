@@ -281,13 +281,13 @@
         "skipDos2Unix": false,
         "timestamp": 123456789
       },
-        "protectedSettings": {
-        "commandToExecute": 
-          "[variables('LinCmdWrapper')]",
-        "fileUris": [
-          "[variables('linuxscripturi')]"
-        ]
-      }
+      //  "protectedSettings": {
+      //  "commandToExecute": 
+      //    "[variables('LinCmdWrapper')]",
+      //  "fileUris": [
+      //    "[variables('linuxscripturi')]"
+      //  ]
+      //}
     },
     "LinuxsecurityRules": [
       {
