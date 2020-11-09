@@ -101,11 +101,9 @@ if [ -z "$LICENSE_KEY" ]
 then
   if [ "$OS" == "Ubuntu 16.04 LTS" ]
   then
-#    sudo ./automated-installer.sh -s secrets -f config.json -r registration.json -a "$USER" --accepteula tableau-installer.deb --force
-    sudo debconf --frontend=noninteractive ./automated-installer.sh -s secrets -f config.json -r registration.json -a "$USER" --accepteula tableau-installer.deb --force
+    sudo ./automated-installer.sh -s secrets -f config.json -r registration.json -a "$USER" --accepteula tableau-installer.deb --force
   else
-#    sudo ./automated-installer.sh -s secrets -f config.json -r registration.json -a "$USER" --accepteula tableau-installer.rpm --force
-    sudo debconf --frontend=noninteractive ./automated-installer.sh -s secrets -f config.json -r registration.json -a "$USER" --accepteula tableau-installer.rpm --force
+    sudo ./automated-installer.sh -s secrets -f config.json -r registration.json -a "$USER" --accepteula tableau-installer.rpm --force 
   fi
 else
   if [ "$OS" == "Ubuntu 16.04 LTS" ]
