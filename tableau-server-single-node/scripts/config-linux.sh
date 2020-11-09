@@ -96,6 +96,8 @@ wait
 #sudo dpkg-reconfigure debconf -f noninteractive -p critical
 #export DEBIAN_FRONTEND=noninteractive
 
+echo "Dpkg::Options {'--force-confdef'; '--force-confold';}" >> /etc/apt/apt.conf.d/local
+
 # run automated installer (install trial if no license key)
 if [ -z "$LICENSE_KEY" ]
 then
