@@ -1,24 +1,6 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
-	"outputs": {    
-		    "LinuxExecute": {
-		        "type": "string",
-		        "value": "[variables('LinuxExecute')]"
-		    },
-		    "LinCmdWrapper": {
-		        "type": "string",
-		        "value": "[variables('LinCmdWrapper')]"
-		    },
-		    "linuxscripturi": {
-		        "type": "string",
-		        "value": "[variables('linuxscripturi')]"
-		    },
-		    "installscripturi": {
-		        "type": "string",
-		        "value": "[variables('installscripturi')]"
-		    }  
-	},  
   "parameters": {
     "_artifactsLocation": {
       "type": "string",
@@ -526,7 +508,9 @@
             }
           ]
         }
-      }
+      },
+      "resources": [
+      ]
     }
   ]
 }
