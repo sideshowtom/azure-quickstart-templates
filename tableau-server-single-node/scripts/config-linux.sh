@@ -93,7 +93,8 @@ echo "modified automated-installer" >> installer_log.txt
 wait
 
 #the vm is non-interactive
-sudo dpkg-reconfigure debconf -f noninteractive -p critical
+#sudo dpkg-reconfigure debconf -f noninteractive -p critical
+export DEBIAN_FRONTEND=noninteractive
 
 # run automated installer (install trial if no license key)
 if [ -z "$LICENSE_KEY" ]
