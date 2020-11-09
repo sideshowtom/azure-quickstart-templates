@@ -272,18 +272,6 @@
         "commandToExecute": "[variables('WinCmdWrapper')]"
       }
     },
-    "lin_CSE_properties": {
-      "publisher": "Microsoft.Azure.Extensions",
-      "type": "CustomScript",
-      "typeHandlerVersion": "2.0",
-      "autoUpgradeMinorVersion": true,
-      "settings": {
-        "skipDos2Unix": false,
-        "timestamp": 123456789
-      },
-      "protectedSettings": {
-      }
-    },
     "LinuxsecurityRules": [
       {
         "name": "ssh-rule",
@@ -521,24 +509,7 @@
             }
           ]
         }
-      },
-      "resources": [
-        {
-          "condition": "[equals(parameters('accept_eula'), 'Yes')]",
-          "name": "[concat('tableau', copyIndex(1),'/CustomScript')]",
-          "type": "Microsoft.Compute/virtualMachines/extensions",
-          "location": "[parameters('location')]",
-          "apiVersion": "2019-07-01",
-          "dependsOn": [
-            "[resourceId('Microsoft.Compute/virtualMachines', concat('tableau', copyIndex(1)))]"
-          ],
-          "tags": {
-            "displayName": "customscriptextension"
-          },
-          "properties":
-            "[if(variables('os_is_linux'),variables('lin_CSE_properties'),variables('win_CSE_properties'))]"
-        }
-      ]
+      }
     }
   ]
 }
